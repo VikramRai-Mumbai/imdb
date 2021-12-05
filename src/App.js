@@ -1,23 +1,24 @@
+import { BrowserRouter as Router, Route } from "react-router-dom";
+import Home from "./Component/Home";
+import Movies from "./Component/Movies";
+import Signin from "./Component/Signin";
+import Watchlist from "./Component/Watchlist"
+import Navigation from "./Component/Navigation"
 import logo from './logo.svg';
 import './App.css';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Learning React
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+  <Router>
+    <Navigation />
+    <Route path="/home" component={Home} />
+    <Route path="/movies" component={Movies} />
+    <Route path="/watchlist" component={Watchlist} />
+    <Route path="/signin" component={Signin} />
+  </Router>
+     
+
     </div>
   );
 }
