@@ -2,7 +2,12 @@
     display:flex;
     list-style: none;
     justify-content: space-around;
+    text-decoration: none;
+    color:#000;
 }
 .nav-container{
     background-color: grey;
+}
+.nav-list > a {
+    color:#000;
 }

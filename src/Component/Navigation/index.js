@@ -1,14 +1,15 @@
 import { Link } from "react-router-dom";
 import "./styles.css";
 
-export default function Navigation(){
+export default function Navigation(props){
     return (
         <div className="nav-container">
            <ul className="nav-list">
-              <Link to="/home"> <li>Home</li></Link>
+              <Link to="/"> <li>Home</li></Link>
               <Link to="/movies"> <li>Movies</li></Link>
               <Link to="/watchlist"> <li>Watchlist</li></Link>
-              <Link to="/signin"> <li>Signin</li></Link>
+              {!props.user ? 
+              <Link to="/signin"> <li>Signin</li></Link> : <button>signout</button>}
            </ul>
         </div>
     );
